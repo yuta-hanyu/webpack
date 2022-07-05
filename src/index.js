@@ -1,14 +1,15 @@
 import { hellow } from "./sub.js"
-md5 = require("js-md5")
+import Worker from "./worker/worker"
+// import Worker from "worker-loader!./Worker.js"
 
 document.querySelector("#submit").addEventListener("click", () => {
   // console.log("ssss")
   // hellow(document.querySelector("#input").value)
   // console.log(document.querySelector("#input").value)
-  const message = "hoge"
-  console.log(md5(message))
+  // const message = "hoge"
+  // console.log(md5(message))
 
-  const worker = new Worker("./worker/worker.js")
+  const worker = new Worker()
 
   worker.addEventListener(
     "message",

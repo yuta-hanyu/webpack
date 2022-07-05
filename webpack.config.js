@@ -13,8 +13,11 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.worker\.js$/,
-        use: { loader: "worker-loader" },
+        test: /worker\.js$/i,
+        loader: "worker-loader",
+        options: {
+          inline: "no-fallback",
+        },
       },
     ],
   },
