@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sub.js */ \"./src/sub.js\");\n\n\n(0,_sub_js__WEBPACK_IMPORTED_MODULE_0__.hellow)(\"hellow\")\n\n\n//# sourceURL=webpack://webpack-prac/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sub_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./sub.js */ \"./src/sub.js\");\n\n\ndocument.querySelector(\"#submit\").addEventListener(\"click\", () => {\n  // console.log(\"ssss\")\n  // hellow(document.querySelector(\"#input\").value)\n  // console.log(document.querySelector(\"#input\").value)\n\n  const worker = new Worker(\"worker.js\")\n\n  worker.addEventListener(\n    \"message\",\n    (e) => {\n      console.log(\"Workerから受け取ったデータは: \", e.data)\n    },\n    false\n  )\n\n  worker.postMessage(\"Hello, world\")\n})\n\n\n//# sourceURL=webpack://webpack-prac/./src/index.js?");
 
 /***/ }),
 
